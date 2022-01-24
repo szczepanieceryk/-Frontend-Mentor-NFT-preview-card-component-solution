@@ -1,0 +1,141 @@
+/* custom CSS varaibles */
+:root {
+    /* fonts */
+    --font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    --font-size: 18px;
+    --font-weight-normal:300;
+    /* colors */
+    /* ### Primary */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* ### Neutral */
+    --main-bgc: hsl(217, 54%, 11%);
+    --card-bgc: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+.app-wrapper {
+    padding: 4em 2em;
+    min-height: 100vh;
+    color: var(--white);
+    background-color: var(--main-bgc);
+}
+
+/* card section */
+.card {
+    position: relative;
+    margin: 0 auto 1em;
+    padding: 1.5em;
+    max-width: 430px;
+    color: var(--soft-blue);
+    background-color: var(--card-bgc);
+}
+
+.card,
+.card .nft-image {
+    border-radius: 10px;
+}
+
+.card .card-title {
+    margin: 1em 0;
+    color: var(--white);
+}
+
+.card .nft-image {
+    width: 100%;
+    transition: .3s;
+}
+.card .description {
+    display: block;
+    line-height: 1.8em;
+    font-weight: var(--font-weight-normal);
+}
+
+.card .info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.card .nft-value,
+.card .time-left {
+    margin: 1em 0;
+    display: inline-block;
+}
+
+.card .nft-value {
+    color: var(--cyan);
+}
+.card .nft-value::before,.card .time-left::before  {
+    margin-right: .2em;
+    vertical-align: middle;
+}
+
+.card .nft-value::before,.card .time-left::before  {
+    content: url(./images/icon-ethereum.svg);
+}
+
+.card .time-left::before {
+    content: url(./images/icon-clock.svg);
+}
+
+/* author section */
+.card .author {
+    margin-top: 1em;
+}
+
+.card .author .author-img {
+    margin-right: 1em;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    vertical-align: middle;
+}
+
+.card .author .author-name {
+    line-height: 30px;
+}
+
+.card .author .author-name .name {
+    color: var(--white);
+}
+
+/* hover states */
+.card .nft-image,
+.card .card-title,
+.card .author .author-name .name {
+    cursor: pointer;
+}
+
+.card .card-title:hover,
+.card .author .author-name .name:hover {
+    transition: .4s;
+    color: var(--cyan);
+    z-index: 4;
+}
+.card .nft-image:hover{
+    opacity: .5;
+}
+
+/* attributions section */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
